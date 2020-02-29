@@ -67,11 +67,13 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('message', message => {
     if(message.content === 'Muchkind')
-    elseif (message.content === 'Mongo')            // Messagefilter 
-    else if (message.content === 'Homo')        
+   
+    
+      
     
 
     message.delete();
     console.log('Eine Nachricht wurde gelöscht')
+
        
 });
