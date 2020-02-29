@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
-const token = ''; // Löschen beim Push
+const token = 'NDk4OTE1OTMzNjY3MTk2OTUx.XlqM0g.BC10pPqvzNH8HyIZ7uDePBv94vo'; // Löschen beim Push
 const PREFIX = '!';
 
 
@@ -18,12 +18,32 @@ bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
+        case'commands':
+        message.channel.sendMessage('Folgende Commands können genutzt werden: !forum; !launcher; !info; !dev');
+        break;
+    }
+
+    switch(args[0]){
         case'forum':
         message.channel.sendMessage('https://millenium-games.de');
         break;
     }
+    switch(args[0]){
+        case'launcher':
+        message.channel.sendMessage('https://mega.nz/#!lFVTUQ6b!xnItnBMEjdA9W36scMs5Bj3h4XCSqClHDhsQHXdo2yU');
+        break;
+    }
+    switch(args[0]){
+        case'info':
+        message.channel.sendMessage('Death World befindet sich momentan in der Version 0.04');
+        break;
+    }
+    switch(args[0]){
+        case'dev':
+        message.channel.sendMessage('');
+        break;
+    }
 
-   
 })
 
 
@@ -66,13 +86,6 @@ bot.on('guildMemberAdd', member => {
 
 
 bot.on('message', message => {
-    if(message.content === 'Muchkind') {
-        continue;
-    }
-
-       
-    message.delete();
-    console.log('Eine Nachricht wurde gelöscht')
-
+    if(message.content === 'Muchkind') 
        
 });
