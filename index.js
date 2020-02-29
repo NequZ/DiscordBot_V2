@@ -1,9 +1,14 @@
 const Discord = require('discord.js');
+
 const bot = new Discord.Client();
 
-const token = 'NDk4OTE1OTMzNjY3MTk2OTUx.Xll1Ww.HTheA_vLK6_tP3JIR7DRM7Q8CPk';
-
+const token = ''; // Löschen beim Push
 const PREFIX = '!';
+
+
+
+
+bot.login(token);
 
 bot.on('ready', () => {
     console.log('Bot ist Online');
@@ -21,13 +26,15 @@ bot.on('message', message=>{
    
 })
 
+
+
 bot.on('ready', () => {
     bot.user.setStatus('available')
     bot.user.setPresence({
         game: {
-            name: 'Am Schlafen',
-            type: "STREAMING",
-            url: "https://www.twitch.tv/the_ravish"
+            name: 'Schaut über seine User',
+            type: "WATCHING"
+            
          
         }
     });
@@ -40,4 +47,21 @@ bot.on('ready', () => {
     //}
 //})
 
-bot.login(token);
+
+bot.on('guildMemberAdd', member => {
+    console.log('User ' + member.user + 'ist dem Server beigetreten')
+
+    var role = member.guild.roles.find('name', '» Tester');
+
+    member.addRole(role)
+    console.log('Rolle erfolgreich vergeben')
+
+    
+
+    bot.channels.get('683304150905389099').send(member.user + "Hallo");
+
+  
+    
+})
+
+
