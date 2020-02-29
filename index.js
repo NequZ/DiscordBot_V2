@@ -66,12 +66,11 @@ bot.on('guildMemberAdd', member => {
 
 
 bot.on('message', message => {
-    if(message.content === 'Muchkind')
-   
-    
-      
-    
+    if(message.content === 'Muchkind') {
+        continue;
+    }
 
+       
     message.delete();
     console.log('Eine Nachricht wurde gelöscht')
 
