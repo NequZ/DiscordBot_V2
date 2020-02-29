@@ -32,8 +32,8 @@ bot.on('ready', () => {
     bot.user.setStatus('available')
     bot.user.setPresence({
         game: {
-            name: 'Schaut über seine User',
-            type: "WATCHING"
+            name: 'Schaut über seine User',                 // Set Bot Status
+            type: ""
             
          
         }
@@ -53,7 +53,7 @@ bot.on('guildMemberAdd', member => {
 
     var role = member.guild.roles.find('name', '» Tester');
 
-    member.addRole(role)
+    member.addRole(role)                                                            // Give Member a Role in this Case for my Discord a specific Role
     console.log('Rolle erfolgreich vergeben')
 
     
@@ -65,3 +65,13 @@ bot.on('guildMemberAdd', member => {
 })
 
 
+bot.on('message', message => {
+    if(message.content === 'Muchkind')
+    elseif (message.content === 'Mongo')            // Messagefilter 
+    else if (message.content === 'Homo')        
+    
+
+    message.delete();
+    console.log('Eine Nachricht wurde gelöscht')
+       
+});
