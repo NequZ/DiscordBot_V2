@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
-const token = 'NDk4OTE1OTMzNjY3MTk2OTUx.XlqM0g.BC10pPqvzNH8HyIZ7uDePBv94vo'; // Löschen beim Push
+const token = ''; // Löschen beim Push
 const PREFIX = '!';
 
 
@@ -83,9 +83,3 @@ bot.on('guildMemberAdd', member => {
   
     
 })
-
-
-bot.on('message', message => {
-    if(message.content === 'Muchkind') 
-       
-});
