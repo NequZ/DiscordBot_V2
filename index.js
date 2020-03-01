@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
-const token = ''; // Löschen beim Push
+const token = 'NDk4OTE1OTMzNjY3MTk2OTUx.XluvJg.70CZzeTRNwXztI_eAbf4uW7LTNM'; // Löschen beim Push
 const PREFIX = '!';
 
 
