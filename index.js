@@ -2,8 +2,14 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
-const token = 'NDk4OTE1OTMzNjY3MTk2OTUx.XluvJg.70CZzeTRNwXztI_eAbf4uW7LTNM'; // Löschen beim Push
-const PREFIX = '!';
+const ytdl = require("ytdl-core");
+const queue = new Map();
+
+
+const {
+	prefix,
+	token,
+} = require('./config.json');
 
 
 
@@ -15,7 +21,7 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message=>{
-    let args = message.content.substring(PREFIX.length).split(" ");
+    let args = message.content.substring(prefix.length).split(" ");
 
     switch(args[0]){
         case'commands':
@@ -83,3 +89,8 @@ bot.on('guildMemberAdd', member => {
   
     
 })
+
+
+
+
+
