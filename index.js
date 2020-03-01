@@ -7,12 +7,9 @@
 
 
 const Discord = require('discord.js');
-
 const bot = new Discord.Client();
 
 const ytdl = require("ytdl-core");
-const queue = new Map();
-
 
 const config = require("./config.json");
 const {
