@@ -1,3 +1,11 @@
+////////////////////////////////////////////////
+///                Written by                ///
+///              Niclas Friedrich           ///
+///              Moritz Behne               ///
+///              Copyright (c) 2020         ///
+///////////////////////////////////////////////
+
+
 const Discord = require('discord.js');
 
 const bot = new Discord.Client();
@@ -6,6 +14,7 @@ const ytdl = require("ytdl-core");
 const queue = new Map();
 
 
+const config = require("./config.json");
 const {
 	prefix,
 	token,
@@ -20,51 +29,17 @@ bot.on('ready', () => {
     console.log('Bot ist Online');
 })
 
-bot.on('message', message=>{
-    let args = message.content.substring(prefix.length).split(" ");
-
-    switch(args[0]){
-        case'commands':
-        message.channel.sendMessage('Folgende Commands können genutzt werden: !forum; !launcher; !info; !dev');
-        break;
+bot.on("message", (message) => {
+    if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+  
+    if (message.content.startsWith(config.prefix + "forum")) {
+      message.channel.send("https://millenium-games.de!");
+    } else
+    if (message.content.startsWith(config.prefix + "launcher")) {
+      message.channel.send("https://mega.nz/#!lFVTUQ6b!xnItnBMEjdA9W36scMs5Bj3h4XCSqClHDhsQHXdo2yU!");
     }
-
-    switch(args[0]){
-        case'forum':
-        message.channel.sendMessage('https://millenium-games.de');
-        break;
-    }
-    switch(args[0]){
-        case'launcher':
-        message.channel.sendMessage('https://mega.nz/#!lFVTUQ6b!xnItnBMEjdA9W36scMs5Bj3h4XCSqClHDhsQHXdo2yU');
-        break;
-    }
-    switch(args[0]){
-        case'info':
-        message.channel.sendMessage('Death World befindet sich momentan in der Version 0.04');
-        break;
-    }
-    switch(args[0]){
-        case'dev':
-        message.channel.sendMessage('');
-        break;
-    }
-
-})
-
-
-
-bot.on('ready', () => {
-    bot.user.setStatus('available')
-    bot.user.setPresence({
-        game: {
-            name: 'Schaut über seine User',                 // Set Bot Status
-            type: ""
-            
-         
-        }
-    });
-});
+        console.log('Eine Nachricht wurde gesendet')
+  });
 
 
 //bot.on('message', msg=>{
